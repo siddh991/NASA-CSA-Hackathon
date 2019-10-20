@@ -138,25 +138,12 @@
   </div>
   <div>
     <h4>Before:</h4>
-    <img alt="before_img" height="500" width="500" id="before_img">
+    <img alt="before_img" height="500" width="500" id="before_img" src={{before_img}}>
     <h4>After:</h4>
-    <img alt="after_img" height="500" width="500" id="after_img">
+    <img alt="after_img" height="500" width="500" id="after_img" src={{after_img}}>
 
-      <h5>% increase:</h5>
+      <h3>% increase: {{prediction}}</h3>
       <p id="class"></p>
   </div>
-    <script>
-        window.onload = function () {
-            let url_string = window.location.href;
-            let url = new URL(url_string);
-            let before_img = url.searchParams.get("before_img");
-            let after_img = url.searchParams.get("after_img");
-            let prediction = url.searchParams.get("prediction");
-            document.getElementById("before_img").src = before_img;
-            document.getElementById("after_img").src = after_img;
-            document.getElementById("class").innerText = prediction;
-
-        }
-    </script>
 </body>
 </html>
