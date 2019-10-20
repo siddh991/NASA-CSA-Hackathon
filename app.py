@@ -28,12 +28,15 @@ def predict(index):
 def root():
     return render_template('test.html')
 
+
+
 @app.route('/result', methods=['GET', 'POST'])
 def display_image():
-    index_list = [1083, 100]
+    index_list = [1083, 100, 1089, 135]
     index_image = {1083: {'before': 'sidd_NDVI_1.jpg', 'after': 'sidd_NDVI_2.jpg'},
-                   100: {'before': 'index100-2019-05-21-2236.jpg', 'after': 'index100-2019-05-26-2204.jpg'}}
-    index = index_list[randrange(1)]
+                   100: {'before': 'index100-2019-05-21-2236.jpg', 'after': 'index100-2019-05-26-2204.jpg'},
+                   1089: {'before': '2019-08-01-0523_1.jpg', 'after': '2019-08-02-0736_2.jpg'}}
+    index = index_list[randrange(4)]
     prediction = predict(index)
     before_img = 'static/' + index_image[index]['before']
     after_img = 'static/' + index_image[index]['after']
