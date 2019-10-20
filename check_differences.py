@@ -10,7 +10,7 @@ def display_ndvi(ndvi_arr):
 def get_differences(file1, file2):
     dataset2 = rio.open('2019-08-02-0736.tif')
     dataset1 = rio.open('2019-08-01-0523.tif')
-    band1 = dataset.read(1)
+    band1 = dataset1.read(1)
     band2 = dataset2.read(1)
     count1 = (band1 <0.2 ).sum()
     count2 = (band2 <0.2 ).sum()
